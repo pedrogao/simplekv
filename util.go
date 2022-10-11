@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-func sizeof(v interface{}) int {
+func sizeof(v any) int {
 	if s, ok := v.(string); ok {
 		return len(s)
 	}

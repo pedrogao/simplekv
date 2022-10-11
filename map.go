@@ -19,12 +19,12 @@ func NewSizedMap() *SizedMap {
 }
 
 // Get k
-func (m *SizedMap) Get(key string) interface{} {
+func (m *SizedMap) Get(key string) any {
 	return m.inner.Find(keyType(key))
 }
 
 // Set k->v
-func (m *SizedMap) Set(key string, v interface{}) {
+func (m *SizedMap) Set(key string, v any) {
 	old := m.Get(key)
 	if old != nil {
 		m.totalSize -= len(key) + sizeof(old)
